@@ -37,7 +37,7 @@ export const WhyChooseUs = () => {
             </div>
 
             <div className="relative">
-                <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden bg-muted">
+                <div className="relative aspect-4/5 w-full rounded-2xl overflow-hidden">
                     <Image
                         src="/professional-roofer-installing-shingles-on-house.jpg"
                         alt="Professional roofer installing shingles on house"
@@ -47,7 +47,7 @@ export const WhyChooseUs = () => {
                     />
                 </div>
 
-                <div className="absolute bottom-8 left-8 sm:bottom-12 sm:left-[-3rem] bg-blue-700 text-white p-8 rounded-xl shadow-xl max-w-xs">
+                <div className="absolute bottom-8 left-8 sm:bottom-12 sm:-left-12 bg-primary text-white p-8 rounded-xl shadow-xl max-w-xs">
                     <div className="text-4xl font-bold mb-1">50+ Years</div>
                     <div className="text-blue-100 font-medium">Combined team experience</div>
                 </div>

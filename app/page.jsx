@@ -1,13 +1,15 @@
 import { WhyChooseUs } from "@/components/why-choose-us";
+import { Services } from "@/components/services";
 import { Section } from "@/components/section";
-import { PageHero } from "@/components/page-hero";
+import { Hero } from "@/components/hero";
 import { Reviews } from "@/components/reviews";
 import Image from "next/image";
+import { CTA } from "@/components/cta";
 
 export default function Home() {
     return (
         <div className="flex flex-col">
-            <div className="relative h-[80vh] w-full flex items-center justify-center overflow-hidden">
+            <div className="relative min-h-[90vh] w-full flex items-center justify-center overflow-hidden py-20 lg:py-0">
                 <Image
                     src="/aerial-roof.jpg"
                     alt="Aerial view of a roof"
@@ -16,38 +18,41 @@ export default function Home() {
                     priority
                 />
                 <div className="absolute inset-0 bg-black/65" />
-                <Section className="relative z-10 w-full">
-                    <PageHero
+                <Section className="relative z-10 w-full max-w-7xl">
+                    <Hero
                         title="Protecting What Matters Most"
                         subheading="Expert roofing solutions built on 25+ years of craftsmanship, reliability, and unwavering commitment to quality."
                         primaryButton={{
-                            label: "Get a Quote",
-                            href: "/solutions/sales-agent/trial",
+                            label: "Call Us Today",
+                            href: "/contact",
                         }}
-                        titleClassName="text-white"
-                        subheadingClassName="text-neutral-200"
                     />
                 </Section>
             </div>
 
-            <div className="sm:space-y-52 space-y-44 sm:py-52 py-44">
-                {/* badges */}
+            <div className="py-24 sm:py-32">
+                <Section className="max-w-7xl">
+                    <Services />
+                </Section>
+            </div>
 
-                {/* about us */}
-
-                {/* latest work */}
-
-                {/* CTA */}
-
+            <div className="bg-secondary py-24 sm:py-32">
                 <Section className="max-w-7xl">
                     <WhyChooseUs />
                 </Section>
+            </div>
 
-                <Section>
+            <div className="py-24 sm:py-32">
+                <Section className="max-w-7xl">
                     <Reviews />
                 </Section>
+            </div>
 
-                {/* testimonials */}
+            <div className="pb-24 sm:pb-32">
+                <CTA
+                    title="Ready to protect your home?"
+                    subheading="Get your free, no-obligation estimate today. Our experts are ready to answer your questions and provide the perfect roofing solution for your home."
+                />
             </div>
         </div>
     );

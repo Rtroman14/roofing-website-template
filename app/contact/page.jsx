@@ -10,20 +10,24 @@ export const metadata = {
 
 export default function ContactPage() {
     return (
-        <div className="sm:space-y-52 space-y-44 sm:py-52 py-44">
-            <Section>
-                <PageHero
-                    title={
-                        <span>
-                            Talk to a Roofing <span className="text-brand">AI Expert</span>
-                        </span>
-                    }
-                    subheading="See how RoofEra’s AI Agents help roofing companies answer leads 24/7, respond instantly, and book more appointments without adding staff."
-                />
-                <div className="w-full mx-auto mt-14">
-                    <CalWidget darkTheme={true} />
-                </div>
-            </Section>
+        <div className="flex flex-col">
+            <PageHero
+                title={
+                    <span>
+                        Talk to a Roofing <span className="text-primary">Expert</span>
+                    </span>
+                }
+                subheading="Get your free estimate today. Our experts are ready to answer your questions and provide the perfect roofing solution for your home."
+                imageSrc="/aerial-roof.jpg"
+                imageAlt="Aerial view of a quality roof installation"
+            />
+            <div className="py-24 sm:py-32">
+                <Section className="max-w-7xl">
+                    <div className="w-full mx-auto">
+                        <CalWidget darkTheme={true} />
+                    </div>
+                </Section>
+            </div>
         </div>
     );
 }
