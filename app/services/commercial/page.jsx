@@ -4,7 +4,7 @@ import { CTA } from "@/components/cta";
 import { Card } from "@/components/ui/card";
 import { Reviews } from "@/components/reviews";
 import {
-    HomeIcon,
+    BuildingOfficeIcon,
     ShieldCheckIcon,
     WrenchScrewdriverIcon,
     ClockIcon,
@@ -14,54 +14,54 @@ import {
 import { CircleCheckBig } from "lucide-react";
 
 export const metadata = {
-    title: "Residential Roofing Services | Premier Roofing",
+    title: "Commercial Roofing Services | Premier Roofing",
     description:
-        "Expert residential roofing services for homeowners. From new installations to repairs, we protect your home with quality materials and craftsmanship.",
+        "Professional commercial roofing services for businesses. Minimize downtime with expert installations, repairs, and maintenance for all commercial roofing systems.",
 };
 
 const features = [
     {
-        icon: HomeIcon,
-        title: "Complete Roof Replacement",
+        icon: BuildingOfficeIcon,
+        title: "New Commercial Roofs",
         description:
-            "Full roof replacement with premium materials backed by comprehensive warranties.",
+            "Complete commercial roof installations with minimal disruption to your business operations.",
     },
     {
         icon: WrenchScrewdriverIcon,
-        title: "Roof Repairs",
-        description: "Quick, reliable repairs for leaks, storm damage, and general wear and tear.",
+        title: "Roof Maintenance",
+        description: "Preventive maintenance programs to extend the life of your commercial roof.",
     },
     {
         icon: ShieldCheckIcon,
         title: "Roof Inspections",
         description:
-            "Thorough inspections to identify potential issues before they become major problems.",
+            "Comprehensive commercial roof inspections to identify issues and prevent costly repairs.",
     },
     {
         icon: ClockIcon,
-        title: "Emergency Services",
-        description: "24/7 emergency repair services when you need us most.",
+        title: "Emergency Repairs",
+        description: "24/7 emergency commercial roofing services to protect your business assets.",
     },
 ];
 
 const benefits = [
-    "Premium asphalt shingle options",
-    "Comprehensive warranty coverage",
-    "Licensed & insured professionals",
-    "Free estimates & consultations",
-    "Financing options available",
-    "Clean job site guarantee",
+    "TPO, EPDM, and metal roofing systems",
+    "Minimal business disruption",
+    "Licensed & fully insured",
+    "Free commercial roof assessments",
+    "Flexible financing options",
+    "Preventive maintenance plans",
 ];
 
-export default function ResidentialRoofingPage() {
+export default function CommercialRoofingPage() {
     return (
         <div className="flex flex-col">
             {/* Hero Section */}
             <PageHero
-                title="Residential Roofing Excellence"
-                subheading="Protect your home with expert roofing solutions. From new installations to repairs and maintenance, we deliver quality craftsmanship that lasts for decades."
+                title="Commercial Roofing Solutions"
+                subheading="Protect your business with reliable commercial roofing. We specialize in installations, repairs, and maintenance that minimize downtime and maximize roof longevity."
                 imageSrc="/professional-roofer-installing-shingles-on-house.jpg"
-                imageAlt="Professional roofer working on residential roof"
+                imageAlt="Commercial roofing installation"
                 primaryButton={{
                     label: "Get a Quote",
                     href: "/contact",
@@ -74,33 +74,35 @@ export default function ResidentialRoofingPage() {
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                         <div className="space-y-6">
                             <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-                                Your home deserves the best protection
+                                Your business deserves reliable protection
                             </h2>
                             <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                                 <p>
-                                    Your roof is your home's first line of defense against the
-                                    elements. At Premier Roofing, we understand the importance of a
-                                    reliable, well-built roof, and we're committed to delivering
-                                    solutions that protect your family and your investment.
+                                    A properly maintained commercial roof is essential to protecting
+                                    your business assets, employees, and operations. At Premier
+                                    Roofing, we understand the unique challenges of commercial
+                                    roofing and deliver solutions that minimize downtime while
+                                    maximizing performance.
                                 </p>
                                 <p>
-                                    Whether you need a complete roof replacement, repairs after
-                                    storm damage, or routine maintenance, our experienced team uses
-                                    only premium materials and proven installation techniques to
-                                    ensure your roof performs beautifully for years to come.
+                                    Whether you need a new roof installation, emergency repairs, or
+                                    a preventive maintenance program, our experienced commercial
+                                    roofing team works efficiently to keep your business running
+                                    smoothly. We specialize in all major commercial roofing systems
+                                    including TPO, EPDM, metal, and built-up roofing.
                                 </p>
                                 <p>
-                                    We work with all major roofing material manufacturers and can
-                                    help you select the perfect option for your home's style,
-                                    budget, and climate requirements.
+                                    We work around your schedule to minimize disruption and can
+                                    provide after-hours and weekend services to accommodate your
+                                    business needs.
                                 </p>
                             </div>
                         </div>
 
                         <div className="relative">
-                            {/* Placeholder for residential roof image */}
+                            {/* Placeholder for commercial roof image */}
                             <div className="aspect-4/3 w-full rounded-2xl bg-gray-300 dark:bg-gray-700 flex items-center justify-center text-muted-foreground">
-                                <span className="text-sm">Residential Roof Image Placeholder</span>
+                                <span className="text-sm">Commercial Roof Image Placeholder</span>
                             </div>
                         </div>
                     </div>
@@ -113,10 +115,10 @@ export default function ResidentialRoofingPage() {
                     <div className="space-y-12">
                         <div className="max-w-3xl mx-auto text-center space-y-4">
                             <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-                                Comprehensive residential services
+                                Comprehensive commercial services
                             </h2>
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                Everything you need to keep your home protected under one roof.
+                                Complete roofing solutions designed for businesses of all sizes.
                             </p>
                         </div>
 
@@ -160,11 +162,11 @@ export default function ResidentialRoofingPage() {
 
                         <div className="space-y-6 order-1 lg:order-2">
                             <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-                                Why homeowners choose us
+                                Why businesses choose us
                             </h2>
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                We're committed to providing the highest quality roofing services
-                                with materials and workmanship you can trust.
+                                We're committed to providing commercial roofing solutions that
+                                protect your investment and keep your business running smoothly.
                             </p>
 
                             <div className="grid gap-4">
@@ -189,8 +191,8 @@ export default function ResidentialRoofingPage() {
                                 Our Simple Process
                             </h2>
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                From initial consultation to final inspection, we make the process
-                                easy and stress-free.
+                                From assessment to completion, we make commercial roofing
+                                straightforward and hassle-free.
                             </p>
                         </div>
 
@@ -198,21 +200,21 @@ export default function ResidentialRoofingPage() {
                             {[
                                 {
                                     step: "01",
-                                    title: "Free Consultation",
+                                    title: "Commercial Assessment",
                                     description:
-                                        "We'll inspect your roof, discuss your needs, and provide a detailed estimate with no obligation.",
+                                        "We'll evaluate your roof, discuss your business needs, and provide a detailed proposal with timeline.",
                                 },
                                 {
                                     step: "02",
-                                    title: "Expert Installation",
+                                    title: "Professional Installation",
                                     description:
-                                        "Our certified team completes your project efficiently using premium materials and proven techniques.",
+                                        "Our certified team completes your project on schedule with minimal disruption to your operations.",
                                 },
                                 {
                                     step: "03",
-                                    title: "Quality Guarantee",
+                                    title: "Ongoing Support",
                                     description:
-                                        "We conduct a final inspection and provide comprehensive warranty coverage for your peace of mind.",
+                                        "We provide comprehensive warranties and optional maintenance plans to protect your investment.",
                                 },
                             ].map((item, index) => (
                                 <div key={index} className="space-y-4">
@@ -241,11 +243,12 @@ export default function ResidentialRoofingPage() {
             <div className="pb-24 sm:pb-32">
                 <Section className="max-w-7xl">
                     <CTA
-                        title="Ready to protect your home?"
-                        subheading="Get your free, no-obligation estimate today. Our experts are ready to answer your questions and provide the perfect roofing solution for your home."
+                        title="Ready to protect your business?"
+                        subheading="Get your free commercial roofing assessment today. Our experts will evaluate your needs and provide a comprehensive solution that works for your business."
                     />
                 </Section>
             </div>
         </div>
     );
 }
+

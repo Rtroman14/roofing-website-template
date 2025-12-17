@@ -25,13 +25,13 @@ const ListItem = React.forwardRef(({ className, title, children, ...props }, ref
                 <a
                     ref={ref}
                     className={cn(
-                        "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-hidden transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+                        "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-hidden transition-colors hover:bg-primary hover:text-white focus:bg-primary focus:text-white group",
                         className
                     )}
                     {...props}
                 >
                     <div className="text-sm font-medium leading-none">{title}</div>
-                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground/80">
+                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground/80 group-hover:text-white/90">
                         {children}
                     </p>
                 </a>
@@ -85,7 +85,7 @@ export function DesktopNavbar({ navItems, isAuthenticated = false }) {
                                     <>
                                         <NavigationMenuTrigger
                                             className={cn(
-                                                "bg-transparent hover:bg-accent/50",
+                                                "bg-transparent hover:bg-primary hover:text-white data-[state=open]:bg-primary data-[state=open]:text-white data-[state=open]:hover:bg-primary",
                                                 textColor
                                             )}
                                         >
@@ -110,7 +110,7 @@ export function DesktopNavbar({ navItems, isAuthenticated = false }) {
                                         asChild
                                         className={cn(
                                             navigationMenuTriggerStyle(),
-                                            "bg-transparent hover:bg-accent/50",
+                                            "bg-transparent hover:bg-primary hover:text-white data-active:bg-primary data-active:text-white",
                                             textColor
                                         )}
                                     >
@@ -135,10 +135,13 @@ export function DesktopNavbar({ navItems, isAuthenticated = false }) {
                     <>
                         <Button
                             asChild
-                            className={cn("rounded-full hover:bg-accent/50", textColor)}
+                            className={cn(
+                                "rounded-full hover:bg-primary hover:text-white",
+                                textColor
+                            )}
                             variant="ghost"
                         >
-                            <Link href="/login">Get a Quote</Link>
+                            <Link href="/contact">Get a Quote</Link>
                         </Button>
                         <Button asChild className="rounded-full">
                             <a href="tel:+17203166031">

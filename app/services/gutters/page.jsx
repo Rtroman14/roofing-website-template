@@ -4,7 +4,7 @@ import { CTA } from "@/components/cta";
 import { Card } from "@/components/ui/card";
 import { Reviews } from "@/components/reviews";
 import {
-    HomeIcon,
+    ArrowPathIcon,
     ShieldCheckIcon,
     WrenchScrewdriverIcon,
     ClockIcon,
@@ -14,54 +14,54 @@ import {
 import { CircleCheckBig } from "lucide-react";
 
 export const metadata = {
-    title: "Residential Roofing Services | Premier Roofing",
+    title: "Gutter Services | Premier Roofing",
     description:
-        "Expert residential roofing services for homeowners. From new installations to repairs, we protect your home with quality materials and craftsmanship.",
+        "Professional gutter installation, repair, and maintenance services. Protect your home's foundation with properly functioning gutters and downspouts.",
 };
 
 const features = [
     {
-        icon: HomeIcon,
-        title: "Complete Roof Replacement",
+        icon: ArrowPathIcon,
+        title: "Gutter Installation",
         description:
-            "Full roof replacement with premium materials backed by comprehensive warranties.",
+            "New seamless gutter systems custom-fitted to your home for optimal water management.",
     },
     {
         icon: WrenchScrewdriverIcon,
-        title: "Roof Repairs",
-        description: "Quick, reliable repairs for leaks, storm damage, and general wear and tear.",
+        title: "Gutter Repairs",
+        description: "Expert repairs for leaks, sagging gutters, and damaged downspouts.",
     },
     {
         icon: ShieldCheckIcon,
-        title: "Roof Inspections",
+        title: "Gutter Guards",
         description:
-            "Thorough inspections to identify potential issues before they become major problems.",
+            "Professional gutter guard installation to prevent clogs and reduce maintenance.",
     },
     {
         icon: ClockIcon,
-        title: "Emergency Services",
-        description: "24/7 emergency repair services when you need us most.",
+        title: "Gutter Cleaning",
+        description: "Thorough cleaning services to keep your gutters flowing freely year-round.",
     },
 ];
 
 const benefits = [
-    "Premium asphalt shingle options",
-    "Comprehensive warranty coverage",
-    "Licensed & insured professionals",
+    "Seamless aluminum gutter systems",
+    "Multiple color options available",
+    "Gutter guard protection systems",
     "Free estimates & consultations",
     "Financing options available",
-    "Clean job site guarantee",
+    "Satisfaction guaranteed",
 ];
 
-export default function ResidentialRoofingPage() {
+export default function GuttersPage() {
     return (
         <div className="flex flex-col">
             {/* Hero Section */}
             <PageHero
-                title="Residential Roofing Excellence"
-                subheading="Protect your home with expert roofing solutions. From new installations to repairs and maintenance, we deliver quality craftsmanship that lasts for decades."
+                title="Professional Gutter Services"
+                subheading="Protect your home's foundation with properly installed and maintained gutters. From new installations to repairs and cleaning, we keep water flowing away from your property."
                 imageSrc="/professional-roofer-installing-shingles-on-house.jpg"
-                imageAlt="Professional roofer working on residential roof"
+                imageAlt="Professional gutter installation"
                 primaryButton={{
                     label: "Get a Quote",
                     href: "/contact",
@@ -74,33 +74,34 @@ export default function ResidentialRoofingPage() {
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                         <div className="space-y-6">
                             <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-                                Your home deserves the best protection
+                                Gutters that protect your investment
                             </h2>
                             <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                                 <p>
-                                    Your roof is your home's first line of defense against the
-                                    elements. At Premier Roofing, we understand the importance of a
-                                    reliable, well-built roof, and we're committed to delivering
-                                    solutions that protect your family and your investment.
+                                    Your gutters play a crucial role in protecting your home from
+                                    water damage. Properly functioning gutters channel rainwater away
+                                    from your foundation, preventing costly damage to your home's
+                                    structure, landscaping, and basement.
                                 </p>
                                 <p>
-                                    Whether you need a complete roof replacement, repairs after
-                                    storm damage, or routine maintenance, our experienced team uses
-                                    only premium materials and proven installation techniques to
-                                    ensure your roof performs beautifully for years to come.
+                                    At Premier Roofing, we specialize in seamless gutter
+                                    installation, repairs, and maintenance. Our custom-fitted gutter
+                                    systems are designed to handle your area's rainfall while
+                                    complementing your home's architecture. We use premium materials
+                                    that resist rust and corrosion for long-lasting performance.
                                 </p>
                                 <p>
-                                    We work with all major roofing material manufacturers and can
-                                    help you select the perfect option for your home's style,
-                                    budget, and climate requirements.
+                                    Whether you need new gutters, repairs to existing systems, or
+                                    gutter guards to reduce maintenance, our experienced team delivers
+                                    solutions that keep your home protected year after year.
                                 </p>
                             </div>
                         </div>
 
                         <div className="relative">
-                            {/* Placeholder for residential roof image */}
+                            {/* Placeholder for gutter image */}
                             <div className="aspect-4/3 w-full rounded-2xl bg-gray-300 dark:bg-gray-700 flex items-center justify-center text-muted-foreground">
-                                <span className="text-sm">Residential Roof Image Placeholder</span>
+                                <span className="text-sm">Gutter System Image Placeholder</span>
                             </div>
                         </div>
                     </div>
@@ -113,10 +114,10 @@ export default function ResidentialRoofingPage() {
                     <div className="space-y-12">
                         <div className="max-w-3xl mx-auto text-center space-y-4">
                             <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-                                Comprehensive residential services
+                                Complete gutter solutions
                             </h2>
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                Everything you need to keep your home protected under one roof.
+                                Everything you need to keep water flowing away from your home.
                             </p>
                         </div>
 
@@ -160,11 +161,11 @@ export default function ResidentialRoofingPage() {
 
                         <div className="space-y-6 order-1 lg:order-2">
                             <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-                                Why homeowners choose us
+                                Why choose our gutter services
                             </h2>
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                We're committed to providing the highest quality roofing services
-                                with materials and workmanship you can trust.
+                                We're committed to providing gutter solutions that protect your home
+                                and enhance its curb appeal.
                             </p>
 
                             <div className="grid gap-4">
@@ -189,8 +190,8 @@ export default function ResidentialRoofingPage() {
                                 Our Simple Process
                             </h2>
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                From initial consultation to final inspection, we make the process
-                                easy and stress-free.
+                                From evaluation to installation, we make gutter services easy and
+                                hassle-free.
                             </p>
                         </div>
 
@@ -198,21 +199,21 @@ export default function ResidentialRoofingPage() {
                             {[
                                 {
                                     step: "01",
-                                    title: "Free Consultation",
+                                    title: "Free Evaluation",
                                     description:
-                                        "We'll inspect your roof, discuss your needs, and provide a detailed estimate with no obligation.",
+                                        "We'll assess your current gutters, measure your home, and provide a detailed estimate at no charge.",
                                 },
                                 {
                                     step: "02",
-                                    title: "Expert Installation",
+                                    title: "Custom Installation",
                                     description:
-                                        "Our certified team completes your project efficiently using premium materials and proven techniques.",
+                                        "Our team fabricates and installs seamless gutters on-site for a perfect fit and clean appearance.",
                                 },
                                 {
                                     step: "03",
-                                    title: "Quality Guarantee",
+                                    title: "Quality Assurance",
                                     description:
-                                        "We conduct a final inspection and provide comprehensive warranty coverage for your peace of mind.",
+                                        "We test your new gutter system and provide care instructions to ensure long-lasting performance.",
                                 },
                             ].map((item, index) => (
                                 <div key={index} className="space-y-4">
@@ -241,11 +242,12 @@ export default function ResidentialRoofingPage() {
             <div className="pb-24 sm:pb-32">
                 <Section className="max-w-7xl">
                     <CTA
-                        title="Ready to protect your home?"
-                        subheading="Get your free, no-obligation estimate today. Our experts are ready to answer your questions and provide the perfect roofing solution for your home."
+                        title="Ready to upgrade your gutters?"
+                        subheading="Get your free gutter evaluation today. Our experts will assess your needs and recommend the best solution to protect your home."
                     />
                 </Section>
             </div>
         </div>
     );
 }
+

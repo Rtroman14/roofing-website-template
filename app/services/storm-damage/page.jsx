@@ -4,9 +4,9 @@ import { CTA } from "@/components/cta";
 import { Card } from "@/components/ui/card";
 import { Reviews } from "@/components/reviews";
 import {
-    HomeIcon,
+    BoltIcon,
     ShieldCheckIcon,
-    WrenchScrewdriverIcon,
+    DocumentTextIcon,
     ClockIcon,
     CheckCircleIcon,
     CurrencyDollarIcon,
@@ -14,56 +14,57 @@ import {
 import { CircleCheckBig } from "lucide-react";
 
 export const metadata = {
-    title: "Residential Roofing Services | Premier Roofing",
+    title: "Storm Damage Roofing Services | Premier Roofing",
     description:
-        "Expert residential roofing services for homeowners. From new installations to repairs, we protect your home with quality materials and craftsmanship.",
+        "Emergency storm damage repair and restoration services. Fast response, insurance claim assistance, and expert repairs to protect your property after severe weather.",
 };
 
 const features = [
     {
-        icon: HomeIcon,
-        title: "Complete Roof Replacement",
+        icon: ClockIcon,
+        title: "Emergency Response",
         description:
-            "Full roof replacement with premium materials backed by comprehensive warranties.",
-    },
-    {
-        icon: WrenchScrewdriverIcon,
-        title: "Roof Repairs",
-        description: "Quick, reliable repairs for leaks, storm damage, and general wear and tear.",
+            "24/7 emergency services to secure your property and prevent further damage after storms.",
     },
     {
         icon: ShieldCheckIcon,
-        title: "Roof Inspections",
-        description:
-            "Thorough inspections to identify potential issues before they become major problems.",
+        title: "Storm Damage Assessment",
+        description: "Thorough inspections to document all storm damage for insurance claims.",
     },
     {
-        icon: ClockIcon,
-        title: "Emergency Services",
-        description: "24/7 emergency repair services when you need us most.",
+        icon: DocumentTextIcon,
+        title: "Insurance Assistance",
+        description:
+            "We work directly with your insurance company to streamline the claims process.",
+    },
+    {
+        icon: BoltIcon,
+        title: "Complete Restoration",
+        description:
+            "Full roof restoration services to return your property to pre-storm condition.",
     },
 ];
 
 const benefits = [
-    "Premium asphalt shingle options",
-    "Comprehensive warranty coverage",
-    "Licensed & insured professionals",
-    "Free estimates & consultations",
-    "Financing options available",
-    "Clean job site guarantee",
+    "24/7 emergency response team",
+    "Direct insurance billing available",
+    "Licensed & fully insured",
+    "Free storm damage inspections",
+    "Temporary repairs & tarping",
+    "Complete documentation for claims",
 ];
 
-export default function ResidentialRoofingPage() {
+export default function StormDamagePage() {
     return (
         <div className="flex flex-col">
             {/* Hero Section */}
             <PageHero
-                title="Residential Roofing Excellence"
-                subheading="Protect your home with expert roofing solutions. From new installations to repairs and maintenance, we deliver quality craftsmanship that lasts for decades."
+                title="Storm Damage Restoration"
+                subheading="Fast, reliable storm damage repairs when you need them most. Our emergency response team is available 24/7 to secure your property and restore your roof after severe weather."
                 imageSrc="/professional-roofer-installing-shingles-on-house.jpg"
-                imageAlt="Professional roofer working on residential roof"
+                imageAlt="Storm damage roof repair"
                 primaryButton={{
-                    label: "Get a Quote",
+                    label: "Get Emergency Help",
                     href: "/contact",
                 }}
             />
@@ -74,33 +75,36 @@ export default function ResidentialRoofingPage() {
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                         <div className="space-y-6">
                             <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-                                Your home deserves the best protection
+                                Rapid response when storms strike
                             </h2>
                             <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                                 <p>
-                                    Your roof is your home's first line of defense against the
-                                    elements. At Premier Roofing, we understand the importance of a
-                                    reliable, well-built roof, and we're committed to delivering
-                                    solutions that protect your family and your investment.
+                                    Storm damage can happen in an instant, leaving your property
+                                    vulnerable to further damage from water intrusion. At Premier
+                                    Roofing, we understand the urgency of storm damage repairs and
+                                    provide rapid response services to protect your home or
+                                    business.
                                 </p>
                                 <p>
-                                    Whether you need a complete roof replacement, repairs after
-                                    storm damage, or routine maintenance, our experienced team uses
-                                    only premium materials and proven installation techniques to
-                                    ensure your roof performs beautifully for years to come.
+                                    Our experienced team is available 24/7 to assess storm damage,
+                                    perform emergency repairs, and begin the restoration process. We
+                                    work directly with insurance companies to document damage and
+                                    streamline your claim, making the process as stress-free as
+                                    possible during a difficult time.
                                 </p>
                                 <p>
-                                    We work with all major roofing material manufacturers and can
-                                    help you select the perfect option for your home's style,
-                                    budget, and climate requirements.
+                                    From wind damage and hail impact to fallen trees and water
+                                    intrusion, we have the expertise and equipment to handle any
+                                    storm-related roofing emergency and restore your property
+                                    quickly and professionally.
                                 </p>
                             </div>
                         </div>
 
                         <div className="relative">
-                            {/* Placeholder for residential roof image */}
+                            {/* Placeholder for storm damage image */}
                             <div className="aspect-4/3 w-full rounded-2xl bg-gray-300 dark:bg-gray-700 flex items-center justify-center text-muted-foreground">
-                                <span className="text-sm">Residential Roof Image Placeholder</span>
+                                <span className="text-sm">Storm Damage Image Placeholder</span>
                             </div>
                         </div>
                     </div>
@@ -113,10 +117,10 @@ export default function ResidentialRoofingPage() {
                     <div className="space-y-12">
                         <div className="max-w-3xl mx-auto text-center space-y-4">
                             <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-                                Comprehensive residential services
+                                Complete storm damage services
                             </h2>
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                Everything you need to keep your home protected under one roof.
+                                From emergency response to full restoration, we're here to help.
                             </p>
                         </div>
 
@@ -160,11 +164,11 @@ export default function ResidentialRoofingPage() {
 
                         <div className="space-y-6 order-1 lg:order-2">
                             <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-                                Why homeowners choose us
+                                Why choose us for storm damage
                             </h2>
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                We're committed to providing the highest quality roofing services
-                                with materials and workmanship you can trust.
+                                We're committed to helping you recover quickly with expert repairs
+                                and hassle-free insurance claim support.
                             </p>
 
                             <div className="grid gap-4">
@@ -186,11 +190,11 @@ export default function ResidentialRoofingPage() {
                     <div className="space-y-12">
                         <div className="max-w-3xl mx-auto text-center space-y-4">
                             <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-                                Our Simple Process
+                                Our Storm Damage Process
                             </h2>
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                From initial consultation to final inspection, we make the process
-                                easy and stress-free.
+                                From emergency response to complete restoration, we guide you
+                                through every step.
                             </p>
                         </div>
 
@@ -198,21 +202,21 @@ export default function ResidentialRoofingPage() {
                             {[
                                 {
                                     step: "01",
-                                    title: "Free Consultation",
+                                    title: "Emergency Response",
                                     description:
-                                        "We'll inspect your roof, discuss your needs, and provide a detailed estimate with no obligation.",
+                                        "We respond quickly to secure your property, perform temporary repairs, and document all damage.",
                                 },
                                 {
                                     step: "02",
-                                    title: "Expert Installation",
+                                    title: "Insurance Coordination",
                                     description:
-                                        "Our certified team completes your project efficiently using premium materials and proven techniques.",
+                                        "We work with your insurance adjuster, provide detailed documentation, and handle all claim paperwork.",
                                 },
                                 {
                                     step: "03",
-                                    title: "Quality Guarantee",
+                                    title: "Complete Restoration",
                                     description:
-                                        "We conduct a final inspection and provide comprehensive warranty coverage for your peace of mind.",
+                                        "Once approved, we complete permanent repairs or full replacement to restore your property.",
                                 },
                             ].map((item, index) => (
                                 <div key={index} className="space-y-4">
@@ -241,8 +245,8 @@ export default function ResidentialRoofingPage() {
             <div className="pb-24 sm:pb-32">
                 <Section className="max-w-7xl">
                     <CTA
-                        title="Ready to protect your home?"
-                        subheading="Get your free, no-obligation estimate today. Our experts are ready to answer your questions and provide the perfect roofing solution for your home."
+                        title="Need emergency storm damage help?"
+                        subheading="Don't wait - contact us immediately for 24/7 emergency response. We'll secure your property and begin the restoration process right away."
                     />
                 </Section>
             </div>

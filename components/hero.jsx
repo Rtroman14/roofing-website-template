@@ -16,7 +16,7 @@ export function Hero({ title, subheading, primaryButton = null, className }) {
             )}
         >
             {/* Column 1: Content */}
-            <div className="flex flex-col">
+            <div className="flex flex-col text-center lg:text-left">
                 <motion.h1
                     initial={{
                         y: 40,
@@ -31,7 +31,7 @@ export function Hero({ title, subheading, primaryButton = null, className }) {
                         duration: 0.5,
                     }}
                     className={cn(
-                        "text-4xl tracking-tight lg:text-7xl font-semibold relative z-10 text-white"
+                        "text-5xl tracking-tight lg:text-7xl font-semibold relative z-10 text-white"
                     )}
                 >
                     <Balancer>{title}</Balancer>
@@ -51,7 +51,7 @@ export function Hero({ title, subheading, primaryButton = null, className }) {
                         duration: 0.5,
                         delay: 0.2,
                     }}
-                    className={cn("mt-6 text-base md:text-lg relative z-10 text-neutral-200")}
+                    className={cn("mt-6 text-lg md:text-xl relative z-10 text-neutral-200")}
                 >
                     <Balancer>{subheading}</Balancer>
                 </motion.p>
@@ -71,7 +71,7 @@ export function Hero({ title, subheading, primaryButton = null, className }) {
                             duration: 0.5,
                             delay: 0.4,
                         }}
-                        className="mt-8 relative z-10"
+                        className="mt-8 relative z-10 flex justify-center lg:justify-start"
                     >
                         <Button asChild className="rounded-full" size="lg">
                             <Link href={primaryButton.href}>{primaryButton.label}</Link>

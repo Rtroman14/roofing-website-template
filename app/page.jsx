@@ -9,7 +9,7 @@ import { CTA } from "@/components/cta";
 export default function Home() {
     return (
         <div className="flex flex-col">
-            <div className="relative min-h-[90vh] w-full flex items-center justify-center overflow-hidden py-20 lg:py-0">
+            <div className="relative min-h-[90vh] w-full flex items-center justify-center overflow-hidden pt-32 pb-20 lg:py-0">
                 <Image
                     src="/aerial-roof.jpg"
                     alt="Aerial view of a roof"

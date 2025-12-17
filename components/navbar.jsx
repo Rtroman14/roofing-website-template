@@ -16,29 +16,31 @@ const navItems = [
             {
                 title: "Residential",
                 href: "/services/residential",
-                description: "Make your website close deals for you 24/7.",
+                description: "Expert roofing solutions for homeowners and residential properties.",
             },
             {
                 title: "Commercial",
                 href: "/services/commercial",
-                description: "Win more jobs with a dedicated AI sales rep 24/7.",
+                description:
+                    "Professional roofing services for businesses and commercial buildings.",
             },
             {
                 title: "Gutters",
                 href: "/services/gutters",
-                description: "Win more jobs with a dedicated AI sales rep 24/7.",
+                description: "Installation, repair, and maintenance for seamless gutter systems.",
             },
             {
                 title: "Storm Damage",
                 href: "/services/storm-damage",
-                description: "Win more jobs with a dedicated AI sales rep 24/7.",
+                description:
+                    "24/7 emergency response and insurance claim assistance for storm damage.",
             },
         ],
     },
-    {
-        title: "Gallery",
-        href: "/gallery",
-    },
+    // {
+    //     title: "Gallery",
+    //     href: "/gallery",
+    // },
     {
         title: "Contact",
         href: "/contact",
