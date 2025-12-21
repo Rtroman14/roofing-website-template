@@ -43,18 +43,24 @@ const team = [
         title: "Founder & Master Roofer",
         description:
             "With over 30 years in the industry, James leads every major project with hands-on expertise.",
+        image: "/team/professional-male-roofing-contractor-portrait.jpg",
+        imageAlt: "James Sullivan, Founder & Master Roofer",
     },
     {
         name: "Maria Rodriguez",
         title: "Operations Director",
         description:
             "Maria ensures every project runs smoothly from initial estimate to final inspection.",
+        image: "/team/professional-female-roofing-project-manager-portra.jpg",
+        imageAlt: "Maria Rodriguez, Operations Director",
     },
     {
         name: "David Chen",
         title: "Senior Technician",
         description:
             "David's technical expertise and 20+ years of experience guarantee flawless installations.",
+        image: "/team/professional-male-roofing-senior-technician-portra.jpg",
+        imageAlt: "David Chen, Senior Technician",
     },
 ];
 
@@ -104,9 +110,12 @@ export default function AboutUsPage() {
                         </div>
 
                         <div className="relative">
-                            {/* Placeholder for team image */}
-                            <div className="aspect-4/5 w-full rounded-2xl bg-gray-300 dark:bg-gray-700 flex items-center justify-center text-muted-foreground">
-                                <span className="text-sm">Team Image Placeholder</span>
+                            <div className="aspect-4/5 w-full rounded-2xl overflow-hidden">
+                                <img
+                                    src="/professional-roofing-crew-working-on-residential-h.jpg"
+                                    alt="Professional roofing crew working on residential home"
+                                    className="w-full h-full object-cover"
+                                />
                             </div>
                         </div>
                     </div>
@@ -171,9 +180,12 @@ export default function AboutUsPage() {
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {team.map((member, index) => (
                                 <Card key={index} className="p-0 overflow-hidden">
-                                    {/* Placeholder for profile image */}
-                                    <div className="aspect-4/5 w-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center text-muted-foreground">
-                                        <span className="text-sm">Profile Image Placeholder</span>
+                                    <div className="aspect-4/5 w-full overflow-hidden">
+                                        <img
+                                            src={member.image}
+                                            alt={member.imageAlt}
+                                            className="w-full h-full object-cover"
+                                        />
                                     </div>
 
                                     <div className="p-4 space-y-2">

@@ -37,10 +37,10 @@ const navItems = [
             },
         ],
     },
-    // {
-    //     title: "Gallery",
-    //     href: "/gallery",
-    // },
+    {
+        title: "Gallery",
+        href: "/gallery",
+    },
     {
         title: "Contact",
         href: "/contact",
