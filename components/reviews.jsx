@@ -2,58 +2,15 @@ import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/ui/marquee";
 import Balancer from "react-wrap-balancer";
 import { StarIcon } from "@heroicons/react/24/solid";
+import { defaultConfig } from "@/lib/default-config";
 
-const reviews = [
-    {
-        name: "Jack",
-        username: "@jack",
-        body: "I've never seen anything like this before. It's amazing. I love it.",
-        img: "https://avatar.vercel.sh/jack",
-    },
-    {
-        name: "Jill",
-        username: "@jill",
-        body: "I don't know what to say. I'm speechless. This is amazing.",
-        img: "https://avatar.vercel.sh/jill",
-    },
-    {
-        name: "John",
-        username: "@john",
-        body: "I'm at a loss for words. This is amazing. I love it.",
-        img: "https://avatar.vercel.sh/john",
-    },
-    {
-        name: "Jane",
-        username: "@jane",
-        body: "I'm at a loss for words. This is amazing. I love it.",
-        img: "https://avatar.vercel.sh/jane",
-    },
-    {
-        name: "Jenny",
-        username: "@jenny",
-        body: "I'm at a loss for words. This is amazing. I love it.",
-        img: "https://avatar.vercel.sh/jenny",
-    },
-    {
-        name: "James",
-        username: "@james",
-        body: "I'm at a loss for words. This is amazing. I love it.",
-        img: "https://avatar.vercel.sh/james",
-    },
-];
-
-const firstRow = reviews.slice(0, reviews.length / 2);
-const secondRow = reviews.slice(reviews.length / 2);
-
-const ReviewCard = ({ img, name, username, body }) => {
+const ReviewCard = ({ img, name, body, rating = 5 }) => {
     return (
         <figure
             className={cn(
                 "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
                 // light styles
-                "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
-                // dark styles
-                "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
+                "border-gray-950/10 bg-gray-950/1 hover:bg-gray-950/5"
             )}
         >
             <div className="flex flex-row items-center gap-2">
@@ -61,7 +18,7 @@ const ReviewCard = ({ img, name, username, body }) => {
                 <div className="flex flex-col">
                     <figcaption className="text-sm font-medium dark:text-white">{name}</figcaption>
                     <div className="flex gap-0.5 mt-1">
-                        {[...Array(5)].map((_, i) => (
+                        {[...Array(Math.floor(rating))].map((_, i) => (
                             <StarIcon key={i} className="size-4 text-yellow-500" />
                         ))}
                     </div>
@@ -72,7 +29,10 @@ const ReviewCard = ({ img, name, username, body }) => {
     );
 };
 
-export function Reviews() {
+export function Reviews({ reviews = defaultConfig.reviews }) {
+    const firstRow = reviews.slice(0, Math.ceil(reviews.length / 2));
+    const secondRow = reviews.slice(Math.ceil(reviews.length / 2));
+
     return (
         <div className="relative flex w-full flex-col items-center justify-center overflow-hidden gap-8 max-w-7xl mx-auto">
             <div>
@@ -86,13 +46,13 @@ export function Reviews() {
 
             <div>
                 <Marquee pauseOnHover className="[--duration:20s]">
-                    {firstRow.map((review) => (
-                        <ReviewCard key={review.username} {...review} />
+                    {firstRow.map((review, idx) => (
+                        <ReviewCard key={`review-1-${idx}`} {...review} />
                     ))}
                 </Marquee>
                 <Marquee reverse pauseOnHover className="[--duration:20s]">
-                    {secondRow.map((review) => (
-                        <ReviewCard key={review.username} {...review} />
+                    {secondRow.map((review, idx) => (
+                        <ReviewCard key={`review-2-${idx}`} {...review} />
                     ))}
                 </Marquee>
                 <div className="from-background pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r"></div>

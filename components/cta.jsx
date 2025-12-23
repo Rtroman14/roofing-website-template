@@ -2,10 +2,11 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRightIcon } from "@heroicons/react/24/solid";
+import { ArrowRightIcon, PhoneIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
+import { defaultConfig } from "@/lib/default-config";
 
-export const CTA = ({ title, subheading }) => {
+export const CTA = ({ title, subheading, phoneNumber = defaultConfig.phoneNumber }) => {
     return (
         <div className="w-full overflow-hidden relative z-30">
             <div className="mx-auto w-full relative z-20 sm:max-w-160 md:max-w-3xl lg:max-w-5xl xl:max-w-7xl bg-primary rounded-xl sm:rounded-2xl">
@@ -34,10 +35,10 @@ export const CTA = ({ title, subheading }) => {
 
                         <div className="relative z-10 mx-auto flex justify-center mt-6">
                             <Button asChild size="lg" variant="secondary" className="rounded-full">
-                                <Link href="/contact">
+                                <a href={`tel:${phoneNumber.replace(/\D/g, '')}`}>
+                                    <PhoneIcon className="size-4" />
                                     Call Us Today
-                                    <ArrowRightIcon className="size-4" />
-                                </Link>
+                                </a>
                             </Button>
                         </div>
                     </div>

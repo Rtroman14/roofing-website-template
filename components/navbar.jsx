@@ -4,6 +4,7 @@ import { DesktopNavbar } from "./desktop-navbar";
 import { MobileNavbar } from "./mobile-navbar";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { defaultConfig } from "@/lib/default-config";
 
 const navItems = [
     {
@@ -47,7 +48,11 @@ const navItems = [
     },
 ];
 
-export function NavBar() {
+export function NavBar({
+    phoneNumber = defaultConfig.phoneNumber,
+    companyName = defaultConfig.companyName,
+    placeId = null,
+}) {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -76,9 +81,19 @@ export function NavBar() {
         >
             <div className="w-full">
                 {isMobile ? (
-                    <MobileNavbar navItems={navItems} />
+                    <MobileNavbar
+                        navItems={navItems}
+                        phoneNumber={phoneNumber}
+                        companyName={companyName}
+                        placeId={placeId}
+                    />
                 ) : (
-                    <DesktopNavbar navItems={navItems} />
+                    <DesktopNavbar
+                        navItems={navItems}
+                        phoneNumber={phoneNumber}
+                        companyName={companyName}
+                        placeId={placeId}
+                    />
                 )}
             </div>
         </motion.nav>

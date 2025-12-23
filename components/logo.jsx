@@ -3,8 +3,14 @@
 import Link from "next/link";
 import React from "react";
 import { cn } from "@/lib/utils";
+import { defaultConfig } from "@/lib/default-config";
 
-export const Logo = ({ href = "/", textSize = "text-3xl", className }) => {
+export const Logo = ({
+    href = "/",
+    textSize = "text-3xl",
+    className,
+    companyName = defaultConfig.companyName,
+}) => {
     return (
         <Link
             href={href}
@@ -14,7 +20,7 @@ export const Logo = ({ href = "/", textSize = "text-3xl", className }) => {
             )}
         >
             {/* <div className="h-5 w-6 bg-black dark:bg-white rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm" /> */}
-            <span className={cn("font-medium logo-font", textSize)}>ACME Roofing</span>
+            <span className={cn("font-medium logo-font", textSize)}>{companyName}</span>
         </Link>
     );
 };

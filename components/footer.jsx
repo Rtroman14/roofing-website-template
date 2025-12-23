@@ -1,8 +1,9 @@
 import Link from "next/link";
 import React from "react";
 import { Logo } from "./logo";
+import { defaultConfig } from "@/lib/default-config";
 
-export const Footer = () => {
+export const Footer = ({ companyName = defaultConfig.companyName }) => {
     const links = [
         // {
         //     name: "Pricing",
@@ -38,15 +39,15 @@ export const Footer = () => {
     const socials = [
         {
             name: "Facebook",
-            href: "https://twitter.com/mannupaaji",
+            href: "https://www.facebook.com/rooferaai",
         },
         {
             name: "LinkedIn",
-            href: "https://linkedin.com/in/manuarora28",
+            href: "https://www.linkedin.com/company/roofera",
         },
         {
             name: "Google",
-            href: "https://github.com/manuarora700",
+            href: "https://google.com",
         },
     ];
     return (
@@ -55,9 +56,11 @@ export const Footer = () => {
                 <div className="mx-auto text-sm text-neutral-500 dark:text-neutral-400 flex sm:flex-row flex-col justify-between items-start ">
                     <div className="mx-auto sm:mx-0">
                         <div className="mr-4  md:flex mb-4">
-                            <Logo />
+                            <Logo companyName={companyName} />
                         </div>
-                        <div>Copyright &copy; {new Date().getFullYear()} RoofEra</div>
+                        <div>
+                            Copyright &copy; {new Date().getFullYear()} {companyName}
+                        </div>
                         <div className="mt-2">All rights reserved</div>
                     </div>
                     <div className="grid grid-cols-3 gap-10 items-start mt-10 md:mt-0">

@@ -1,5 +1,3 @@
-import { NavBar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
 import { Geist, Geist_Mono, Audiowide, Inter } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
@@ -55,11 +53,7 @@ export default function RootLayout({ children }) {
                     "antialiased"
                 )}
             >
-                <NavBar />
-                <main className="h-full">
-                    <Providers color="#3DCF8E">{children}</Providers>
-                </main>
-                <Footer />
+                <Providers color="#3DCF8E">{children}</Providers>
             </body>
         </html>
     );

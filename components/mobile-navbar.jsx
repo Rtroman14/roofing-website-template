@@ -9,8 +9,9 @@ import { Logo } from "./logo";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 // import { ModeToggle } from "../mode-toggle";
 import { ArrowRightIcon, PhoneIcon } from "@heroicons/react/24/solid";
+import { defaultConfig } from "@/lib/default-config";
 
-export const MobileNavbar = ({ navItems }) => {
+export const MobileNavbar = ({ navItems, phoneNumber = defaultConfig.phoneNumber, companyName = defaultConfig.companyName, placeId = null }) => {
     const [open, setOpen] = useState(false);
 
     const { scrollY } = useScroll();
@@ -25,6 +26,14 @@ export const MobileNavbar = ({ navItems }) => {
         }
     });
 
+    // Helper function to prefix href with placeId if on demo site
+    const getHref = (href) => {
+        if (placeId) {
+            return `/${placeId}${href}`;
+        }
+        return href;
+    };
+
     return (
         <div
             className={cn(
@@ -33,7 +42,7 @@ export const MobileNavbar = ({ navItems }) => {
                     "bg-neutral-50 dark:bg-neutral-900 shadow-[0px_-2px_0px_0px_var(--neutral-100),0px_2px_0px_0px_var(--neutral-100)] dark:shadow-[0px_-2px_0px_0px_var(--neutral-800),0px_2px_0px_0px_var(--neutral-800)]"
             )}
         >
-            <Logo />
+            <Logo companyName={companyName} href={placeId ? `/${placeId}` : "/"} />
             <Bars3Icon
                 className="text-black dark:text-white h-6 w-6 mr-2"
                 onClick={() => setOpen(!open)}
@@ -42,7 +51,7 @@ export const MobileNavbar = ({ navItems }) => {
             {open && (
                 <div className="fixed inset-0 bg-white dark:bg-black z-50 flex flex-col items-start justify-start space-y-10  pt-5  text-xl text-zinc-600  transition duration-200 hover:text-zinc-800">
                     <div className="flex items-center justify-between w-full px-5">
-                        <Logo />
+                        <Logo companyName={companyName} href={placeId ? `/${placeId}` : "/"} />
                         <div className="flex items-center space-x-2">
                             <XMarkIcon
                                 className="h-8 w-8 text-black dark:text-white"
@@ -61,7 +70,7 @@ export const MobileNavbar = ({ navItems }) => {
                                         {navItem.children.map((childNavItem, idx) => (
                                             <Link
                                                 key={`link=${idx}`}
-                                                href={childNavItem.href}
+                                                href={getHref(childNavItem.href)}
                                                 onClick={() => setOpen(false)}
                                                 className="relative max-w-[15rem] text-left text-2xl"
                                             >
@@ -74,7 +83,7 @@ export const MobileNavbar = ({ navItems }) => {
                                 ) : (
                                     <Link
                                         key={`link=${idx}`}
-                                        href={navItem.href}
+                                        href={getHref(navItem.href)}
                                         onClick={() => setOpen(false)}
                                         className="relative"
                                     >
@@ -92,12 +101,12 @@ export const MobileNavbar = ({ navItems }) => {
                             className="rounded-full text-black dark:text-gray-200 border-black dark:border-gray-200"
                             variant="outline"
                         >
-                            <Link href="/login">Get a Quote</Link>
+                            <Link href={getHref("/contact")}>Get a Quote</Link>
                         </Button>
                         <Button asChild className="rounded-full">
-                            <a href="tel:+17203166031">
+                            <a href={`tel:${phoneNumber.replace(/\D/g, '')}`}>
                                 <PhoneIcon className="size-3" />
-                                (720) 316-6031
+                                {phoneNumber}
                             </a>
                         </Button>
                     </div>

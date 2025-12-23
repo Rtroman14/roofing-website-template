@@ -17,6 +17,7 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { ArrowRightIcon, PhoneIcon } from "@heroicons/react/24/solid";
+import { defaultConfig } from "@/lib/default-config";
 
 const ListItem = React.forwardRef(({ className, title, children, ...props }, ref) => {
     return (
@@ -41,7 +42,13 @@ const ListItem = React.forwardRef(({ className, title, children, ...props }, ref
 });
 ListItem.displayName = "ListItem";
 
-export function DesktopNavbar({ navItems, isAuthenticated = false }) {
+export function DesktopNavbar({
+    navItems,
+    isAuthenticated = false,
+    phoneNumber = defaultConfig.phoneNumber,
+    companyName = defaultConfig.companyName,
+    placeId = null,
+}) {
     const { scrollY } = useScroll();
     const [showBackground, setShowBackground] = useState(false);
 
@@ -54,6 +61,14 @@ export function DesktopNavbar({ navItems, isAuthenticated = false }) {
     });
 
     const textColor = showBackground ? "text-neutral-900 dark:text-white" : "text-white";
+
+    // Helper function to prefix href with placeId if on demo site
+    const getHref = (href) => {
+        if (placeId) {
+            return `/${placeId}${href}`;
+        }
+        return href;
+    };
 
     return (
         <div
@@ -76,7 +91,11 @@ export function DesktopNavbar({ navItems, isAuthenticated = false }) {
             </AnimatePresence>
 
             <div className="flex flex-row gap-2 items-center">
-                <Logo className={textColor} />
+                <Logo
+                    className={textColor}
+                    companyName={companyName}
+                    href={placeId ? `/${placeId}` : "/"}
+                />
                 <NavigationMenu delayDuration={100}>
                     <NavigationMenuList>
                         {navItems.map((item) => (
@@ -97,7 +116,7 @@ export function DesktopNavbar({ navItems, isAuthenticated = false }) {
                                                     <ListItem
                                                         key={child.title}
                                                         title={child.title}
-                                                        href={child.href}
+                                                        href={getHref(child.href)}
                                                     >
                                                         {child.description}
                                                     </ListItem>
@@ -114,7 +133,7 @@ export function DesktopNavbar({ navItems, isAuthenticated = false }) {
                                             textColor
                                         )}
                                     >
-                                        <Link href={item.href}>{item.title}</Link>
+                                        <Link href={getHref(item.href)}>{item.title}</Link>
                                     </NavigationMenuLink>
                                 )}
                             </NavigationMenuItem>
@@ -141,12 +160,12 @@ export function DesktopNavbar({ navItems, isAuthenticated = false }) {
                             )}
                             variant="ghost"
                         >
-                            <Link href="/contact">Get a Quote</Link>
+                            <Link href={getHref("/contact")}>Get a Quote</Link>
                         </Button>
                         <Button asChild className="rounded-full">
-                            <a href="tel:+17203166031">
+                            <a href={`tel:${phoneNumber.replace(/\D/g, "")}`}>
                                 <PhoneIcon />
-                                (720) 316-6031
+                                {phoneNumber}
                             </a>
                         </Button>
                     </>

@@ -5,8 +5,31 @@ import { Hero } from "@/components/hero";
 import { Reviews } from "@/components/reviews";
 import Image from "next/image";
 import { CTA } from "@/components/cta";
+import { fetchPlaceData } from "@/lib/actions/fetch-place-data";
+import { defaultConfig } from "@/lib/default-config";
+import { notFound } from "next/navigation";
+import { isValidPlaceId } from "@/lib/validators";
 
-export default function Home() {
+export default async function DemoPage({ params }) {
+    const { placeId } = await params;
+
+    // Validate Place ID format first
+    if (!isValidPlaceId(placeId)) {
+        console.error(`Invalid Place ID format: ${placeId}`);
+        notFound();
+    }
+
+    // Fetch place data
+    const config = await fetchPlaceData(placeId);
+
+    // If place not found after validation, show 404
+    if (!config) {
+        console.error(`Place ${placeId} not found`);
+        notFound();
+    }
+
+    const finalConfig = config;
+
     return (
         <div className="flex flex-col">
             <div className="relative min-h-[90vh] w-full flex items-center justify-center overflow-hidden pt-32 pb-20 lg:py-0">
@@ -20,8 +43,8 @@ export default function Home() {
                 <div className="absolute inset-0 bg-black/65" />
                 <Section className="relative z-10 w-full max-w-7xl">
                     <Hero
-                        title="Protecting What Matters Most"
-                        subheading="Expert roofing solutions built on 25+ years of craftsmanship, reliability, and unwavering commitment to quality."
+                        title={finalConfig.heroTitle}
+                        subheading={finalConfig.heroDescription}
                         primaryButton={{
                             label: "Call Us Today",
                             href: "/contact",
@@ -44,14 +67,15 @@ export default function Home() {
 
             <div className="py-24 sm:py-32">
                 <Section className="max-w-7xl">
-                    <Reviews />
+                    <Reviews reviews={finalConfig.reviews} />
                 </Section>
             </div>
 
             <div className="pb-24 sm:pb-32">
                 <CTA
-                    title="Ready to protect your home?"
-                    subheading="Get your free, no-obligation estimate today. Our experts are ready to answer your questions and provide the perfect roofing solution for your home."
+                    title={finalConfig.ctaTitle}
+                    subheading={finalConfig.ctaDescription}
+                    phoneNumber={finalConfig.phoneNumber}
                 />
             </div>
         </div>
