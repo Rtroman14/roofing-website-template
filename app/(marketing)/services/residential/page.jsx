@@ -3,6 +3,7 @@ import { Section } from "@/components/section";
 import { CTA } from "@/components/cta";
 import { Card } from "@/components/ui/card";
 import { Reviews } from "@/components/reviews";
+import { GetQuoteButton } from "@/components/get-quote-button";
 import {
     HomeIcon,
     ShieldCheckIcon,
@@ -64,7 +65,7 @@ export default function ResidentialRoofingPage() {
                 imageAlt="Professional roofer working on residential roof"
                 primaryButton={{
                     label: "Get a Quote",
-                    href: "/contact",
+                    message: "I'd like to get a quote",
                 }}
             />
 
@@ -94,6 +95,10 @@ export default function ResidentialRoofingPage() {
                                     help you select the perfect option for your home's style,
                                     budget, and climate requirements.
                                 </p>
+                            </div>
+
+                            <div className="mt-8">
+                                <GetQuoteButton />
                             </div>
                         </div>
 

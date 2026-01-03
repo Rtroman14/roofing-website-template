@@ -5,6 +5,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Logo } from "./logo";
 import { Button } from "@/components/ui/button";
+import { GetQuoteButton } from "@/components/get-quote-button";
 import { useMotionValueEvent, useScroll, motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import {
@@ -26,7 +27,7 @@ const ListItem = React.forwardRef(({ className, title, children, ...props }, ref
                 <a
                     ref={ref}
                     className={cn(
-                        "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-hidden transition-colors hover:bg-primary hover:text-white focus:bg-primary focus:text-white group",
+                        "block select-none space-y-1 rounded-full p-3 leading-none no-underline outline-hidden transition-colors hover:bg-primary hover:text-white focus:bg-primary focus:text-white group",
                         className
                     )}
                     {...props}
@@ -60,7 +61,7 @@ export function DesktopNavbar({
         }
     });
 
-    const textColor = showBackground ? "text-neutral-900 dark:text-white" : "text-white";
+    const textColor = showBackground ? "text-neutral-900" : "text-white";
 
     // Helper function to prefix href with placeId if on demo site
     const getHref = (href) => {
@@ -75,7 +76,7 @@ export function DesktopNavbar({
             className={cn(
                 "w-full flex relative justify-between px-4 py-2 rounded-full bg-transparent transition duration-100",
                 showBackground &&
-                    "bg-neutral-50 dark:bg-neutral-900 shadow-[0px_-2px_0px_0px_var(--neutral-100),0px_2px_0px_0px_var(--neutral-100)] dark:shadow-[0px_-2px_0px_0px_var(--neutral-800),0px_2px_0px_0px_var(--neutral-800)]"
+                    "bg-neutral-50 shadow-[0px_-2px_0px_0px_var(--neutral-100),0px_2px_0px_0px_var(--neutral-100)]"
             )}
         >
             <AnimatePresence>
@@ -85,7 +86,7 @@ export function DesktopNavbar({
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1 }}
-                        className="absolute inset-0 h-full w-full bg-neutral-100 dark:bg-neutral-800 pointer-events-none mask-[linear-gradient(to_bottom,white,transparent,white)] rounded-full"
+                        className="absolute inset-0 h-full w-full bg-neutral-100 pointer-events-none mask-[linear-gradient(to_bottom,white,transparent,white)] rounded-full"
                     />
                 )}
             </AnimatePresence>
@@ -104,7 +105,7 @@ export function DesktopNavbar({
                                     <>
                                         <NavigationMenuTrigger
                                             className={cn(
-                                                "bg-transparent hover:bg-primary hover:text-white data-[state=open]:bg-primary data-[state=open]:text-white data-[state=open]:hover:bg-primary",
+                                                "rounded-full bg-transparent hover:bg-primary hover:text-white data-[state=open]:bg-primary data-[state=open]:text-white data-[state=open]:hover:bg-primary",
                                                 textColor
                                             )}
                                         >
@@ -129,7 +130,7 @@ export function DesktopNavbar({
                                         asChild
                                         className={cn(
                                             navigationMenuTriggerStyle(),
-                                            "bg-transparent hover:bg-primary hover:text-white data-active:bg-primary data-active:text-white",
+                                            "rounded-full bg-transparent hover:bg-primary hover:text-white data-active:bg-primary data-active:text-white",
                                             textColor
                                         )}
                                     >
@@ -152,16 +153,13 @@ export function DesktopNavbar({
                     </Button>
                 ) : (
                     <>
-                        <Button
-                            asChild
+                        <GetQuoteButton
+                            variant="ghost"
                             className={cn(
                                 "rounded-full hover:bg-primary hover:text-white",
                                 textColor
                             )}
-                            variant="ghost"
-                        >
-                            <Link href={getHref("/contact")}>Get a Quote</Link>
-                        </Button>
+                        />
                         <Button asChild className="rounded-full">
                             <a href={`tel:${phoneNumber.replace(/\D/g, "")}`}>
                                 <PhoneIcon />

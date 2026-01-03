@@ -3,6 +3,7 @@ import { Section } from "@/components/section";
 import { CTA } from "@/components/cta";
 import { Card } from "@/components/ui/card";
 import { Reviews } from "@/components/reviews";
+import { GetQuoteButton } from "@/components/get-quote-button";
 import {
     ArrowPathIcon,
     ShieldCheckIcon,
@@ -64,7 +65,7 @@ export default function GuttersPage() {
                 imageAlt="Professional gutter installation"
                 primaryButton={{
                     label: "Get a Quote",
-                    href: "/contact",
+                    message: "I'd like to get a quote",
                 }}
             />
 
@@ -79,9 +80,9 @@ export default function GuttersPage() {
                             <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                                 <p>
                                     Your gutters play a crucial role in protecting your home from
-                                    water damage. Properly functioning gutters channel rainwater away
-                                    from your foundation, preventing costly damage to your home's
-                                    structure, landscaping, and basement.
+                                    water damage. Properly functioning gutters channel rainwater
+                                    away from your foundation, preventing costly damage to your
+                                    home's structure, landscaping, and basement.
                                 </p>
                                 <p>
                                     At Premier Roofing, we specialize in seamless gutter
@@ -92,9 +93,14 @@ export default function GuttersPage() {
                                 </p>
                                 <p>
                                     Whether you need new gutters, repairs to existing systems, or
-                                    gutter guards to reduce maintenance, our experienced team delivers
-                                    solutions that keep your home protected year after year.
+                                    gutter guards to reduce maintenance, our experienced team
+                                    delivers solutions that keep your home protected year after
+                                    year.
                                 </p>
+                            </div>
+
+                            <div className="mt-8">
+                                <GetQuoteButton />
                             </div>
                         </div>
 
@@ -250,4 +256,3 @@ export default function GuttersPage() {
         </div>
     );
 }
-

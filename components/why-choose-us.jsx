@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { CircleCheckBig } from "lucide-react";
+import { GetQuoteButton } from "@/components/get-quote-button";
 
 const benefits = [
     "Licensed & fully insured contractors",
@@ -33,6 +34,10 @@ export const WhyChooseUs = () => {
                             <span className="font-medium">{benefit}</span>
                         </div>
                     ))}
+                </div>
+
+                <div className="mt-8">
+                    <GetQuoteButton />
                 </div>
             </div>
 

@@ -116,7 +116,7 @@ export default function GalleryPage() {
                 imageAlt="Professional roofing work showcase"
                 primaryButton={{
                     label: "Get a Quote",
-                    href: "/contact",
+                    message: "I'd like to get a quote",
                 }}
             />
 

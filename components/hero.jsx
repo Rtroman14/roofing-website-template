@@ -3,11 +3,10 @@
 import Balancer from "react-wrap-balancer";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import { GetQuoteButton } from "@/components/get-quote-button";
 import { ContactForm } from "@/components/contact-form";
-import Link from "next/link";
 
-export function Hero({ title, subheading, primaryButton = null, className }) {
+export function Hero({ title, subheading, className }) {
     return (
         <div
             className={cn(
@@ -56,28 +55,24 @@ export function Hero({ title, subheading, primaryButton = null, className }) {
                     <Balancer>{subheading}</Balancer>
                 </motion.p>
 
-                {primaryButton && (
-                    <motion.div
-                        initial={{
-                            y: 40,
-                            opacity: 0,
-                        }}
-                        animate={{
-                            y: 0,
-                            opacity: 1,
-                        }}
-                        transition={{
-                            ease: "easeOut",
-                            duration: 0.5,
-                            delay: 0.4,
-                        }}
-                        className="mt-8 relative z-10 flex justify-center lg:justify-start"
-                    >
-                        <Button asChild className="rounded-full" size="lg">
-                            <Link href={primaryButton.href}>{primaryButton.label}</Link>
-                        </Button>
-                    </motion.div>
-                )}
+                <motion.div
+                    initial={{
+                        y: 40,
+                        opacity: 0,
+                    }}
+                    animate={{
+                        y: 0,
+                        opacity: 1,
+                    }}
+                    transition={{
+                        ease: "easeOut",
+                        duration: 0.5,
+                        delay: 0.4,
+                    }}
+                    className="mt-8 relative z-10 flex justify-center lg:justify-start"
+                >
+                    <GetQuoteButton className="rounded-full" />
+                </motion.div>
             </div>
 
             {/* Column 2: Form */}

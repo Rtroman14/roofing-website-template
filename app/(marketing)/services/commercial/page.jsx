@@ -3,6 +3,7 @@ import { Section } from "@/components/section";
 import { CTA } from "@/components/cta";
 import { Card } from "@/components/ui/card";
 import { Reviews } from "@/components/reviews";
+import { GetQuoteButton } from "@/components/get-quote-button";
 import {
     BuildingOfficeIcon,
     ShieldCheckIcon,
@@ -64,7 +65,7 @@ export default function CommercialRoofingPage() {
                 imageAlt="Commercial roofing installation"
                 primaryButton={{
                     label: "Get a Quote",
-                    href: "/contact",
+                    message: "I'd like to get a quote",
                 }}
             />
 
@@ -96,6 +97,10 @@ export default function CommercialRoofingPage() {
                                     provide after-hours and weekend services to accommodate your
                                     business needs.
                                 </p>
+                            </div>
+
+                            <div className="mt-8">
+                                <GetQuoteButton />
                             </div>
                         </div>
 
@@ -251,4 +256,3 @@ export default function CommercialRoofingPage() {
         </div>
     );
 }
-

@@ -1,7 +1,5 @@
-"use client";
-
 import React from "react";
-import { Button } from "@/components/ui/button";
+import { GetQuoteButton } from "@/components/get-quote-button";
 import { ArrowRightIcon, PhoneIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { defaultConfig } from "@/lib/default-config";
@@ -33,13 +31,8 @@ export const CTA = ({ title, subheading, phoneNumber = defaultConfig.phoneNumber
                             {subheading}
                         </p>
 
-                        <div className="relative z-10 mx-auto flex justify-center mt-6">
-                            <Button asChild size="lg" variant="secondary" className="rounded-full">
-                                <a href={`tel:${phoneNumber.replace(/\D/g, '')}`}>
-                                    <PhoneIcon className="size-4" />
-                                    Call Us Today
-                                </a>
-                            </Button>
+                        <div className="relative z-10 mx-auto flex justify-center mt-6 gap-3">
+                            <GetQuoteButton variant="secondary" />
                         </div>
                     </div>
                 </div>

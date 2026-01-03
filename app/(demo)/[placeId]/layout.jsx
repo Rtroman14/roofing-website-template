@@ -1,7 +1,7 @@
 import { NavBar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { fetchPlaceData } from "@/lib/actions/fetch-place-data";
-import { defaultConfig } from "@/lib/default-config";
+import Script from "next/script";
 import { isValidPlaceId } from "@/lib/validators";
 import { notFound } from "next/navigation";
 
@@ -23,13 +23,21 @@ export default async function DemoLayout({ children, params }) {
 
     return (
         <>
+            <Script src="https://roofera.ai/api/chatbot/85bd9560-1d94-407c-a337-2c45f32124c9/widget" />
+
             <NavBar
                 phoneNumber={config.phoneNumber}
                 companyName={config.companyName}
+                cityName={config.city || "City"}
                 placeId={placeId}
             />
             <main className="h-full">{children}</main>
-            <Footer companyName={config.companyName} />
+            <Footer
+                companyName={config.companyName}
+                phoneNumber={config.phoneNumber}
+                address={config.address}
+                placeId={placeId}
+            />
         </>
     );
 }

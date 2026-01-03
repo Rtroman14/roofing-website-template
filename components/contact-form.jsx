@@ -65,9 +65,9 @@ export function ContactForm({
     };
 
     return (
-        <div className="w-full bg-card border border-border rounded-lg p-6 md:p-8 shadow-lg">
-            <div className="mb-6">
-                <h3 className="text-2xl font-semibold mb-2">{title}</h3>
+        <div className="w-full bg-card border border-border rounded-3xl p-6 shadow-lg">
+            <div className="mb-4">
+                <h3 className="text-2xl font-semibold mb-1">{title}</h3>
                 <p className="text-muted-foreground text-sm">{subtitle}</p>
             </div>
 
@@ -75,8 +75,8 @@ export function ContactForm({
                 <div
                     className={`mb-6 p-4 rounded-md ${
                         submitStatus.success
-                            ? "bg-green-50 dark:bg-green-950 text-green-900 dark:text-green-100 border border-green-200 dark:border-green-800"
-                            : "bg-red-50 dark:bg-red-950 text-red-900 dark:text-red-100 border border-red-200 dark:border-red-800"
+                            ? "bg-green-50 text-green-900 border border-green-200"
+                            : "bg-red-50 text-red-900 border border-red-200"
                     }`}
                 >
                     <p className="text-sm font-medium">{submitStatus.message}</p>

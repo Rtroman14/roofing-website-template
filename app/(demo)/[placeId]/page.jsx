@@ -42,14 +42,7 @@ export default async function DemoPage({ params }) {
                 />
                 <div className="absolute inset-0 bg-black/65" />
                 <Section className="relative z-10 w-full max-w-7xl">
-                    <Hero
-                        title={finalConfig.heroTitle}
-                        subheading={finalConfig.heroDescription}
-                        primaryButton={{
-                            label: "Call Us Today",
-                            href: "/contact",
-                        }}
-                    />
+                    <Hero title={finalConfig.heroTitle} subheading={finalConfig.heroDescription} />
                 </Section>
             </div>
 

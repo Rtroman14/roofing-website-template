@@ -3,6 +3,7 @@ import { Section } from "@/components/section";
 import { CTA } from "@/components/cta";
 import { Card } from "@/components/ui/card";
 import { Reviews } from "@/components/reviews";
+import { GetQuoteButton } from "@/components/get-quote-button";
 import {
     BoltIcon,
     ShieldCheckIcon,
@@ -65,7 +66,7 @@ export default function StormDamagePage() {
                 imageAlt="Storm damage roof repair"
                 primaryButton={{
                     label: "Get Emergency Help",
-                    href: "/contact",
+                    message: "I need emergency help with storm damage",
                 }}
             />
 
@@ -98,6 +99,13 @@ export default function StormDamagePage() {
                                     storm-related roofing emergency and restore your property
                                     quickly and professionally.
                                 </p>
+                            </div>
+
+                            <div className="mt-8">
+                                <GetQuoteButton
+                                    label="Get Emergency Help"
+                                    message="I need emergency help with storm damage"
+                                />
                             </div>
                         </div>
 

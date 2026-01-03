@@ -2,6 +2,7 @@ import { PageHero } from "@/components/page-hero";
 import { Section } from "@/components/section";
 import { CTA } from "@/components/cta";
 import { Card } from "@/components/ui/card";
+import { GetQuoteButton } from "@/components/get-quote-button";
 import { TrophyIcon, ShieldCheckIcon, UsersIcon, BoltIcon } from "@heroicons/react/24/outline";
 
 export const metadata = {
@@ -75,7 +76,7 @@ export default function AboutUsPage() {
                 imageAlt="Professional roofer installing shingles"
                 primaryButton={{
                     label: "Get a Quote",
-                    href: "/contact",
+                    message: "I'd like to get a quote",
                 }}
             />
 
@@ -106,6 +107,10 @@ export default function AboutUsPage() {
                                     materials and techniques, ensuring that your roof not only looks
                                     beautiful but provides decades of reliable protection.
                                 </p>
+                            </div>
+
+                            <div className="mt-8">
+                                <GetQuoteButton />
                             </div>
                         </div>
 

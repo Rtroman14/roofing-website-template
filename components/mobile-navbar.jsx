@@ -5,13 +5,19 @@ import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Button } from "@/components/ui/button";
+import { GetQuoteButton } from "@/components/get-quote-button";
 import { Logo } from "./logo";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 // import { ModeToggle } from "../mode-toggle";
 import { ArrowRightIcon, PhoneIcon } from "@heroicons/react/24/solid";
 import { defaultConfig } from "@/lib/default-config";
 
-export const MobileNavbar = ({ navItems, phoneNumber = defaultConfig.phoneNumber, companyName = defaultConfig.companyName, placeId = null }) => {
+export const MobileNavbar = ({
+    navItems,
+    phoneNumber = defaultConfig.phoneNumber,
+    companyName = defaultConfig.companyName,
+    placeId = null,
+}) => {
     const [open, setOpen] = useState(false);
 
     const { scrollY } = useScroll();
@@ -96,15 +102,14 @@ export const MobileNavbar = ({ navItems, phoneNumber = defaultConfig.phoneNumber
                         ))}
                     </div>
                     <div className="flex flex-row w-full items-start gap-2.5 px-8">
-                        <Button
-                            asChild
-                            className="rounded-full text-black dark:text-gray-200 border-black dark:border-gray-200"
-                            variant="outline"
-                        >
-                            <Link href={getHref("/contact")}>Get a Quote</Link>
-                        </Button>
+                        <div onClick={() => setOpen(false)}>
+                            <GetQuoteButton
+                                variant="outline"
+                                className="rounded-full text-black dark:text-gray-200 border-black dark:border-gray-200"
+                            />
+                        </div>
                         <Button asChild className="rounded-full">
-                            <a href={`tel:${phoneNumber.replace(/\D/g, '')}`}>
+                            <a href={`tel:${phoneNumber.replace(/\D/g, "")}`}>
                                 <PhoneIcon className="size-3" />
                                 {phoneNumber}
                             </a>
