@@ -3,6 +3,12 @@ import { Footer } from "@/components/footer";
 import { defaultConfig } from "@/lib/default-config";
 import Script from "next/script";
 
+export const metadata = {
+    title: "ACME Roofing",
+    description:
+        "Professional roofing installation, repair, and maintenance for residential and commercial properties.",
+};
+
 export default function RootLayout({ children, config = defaultConfig }) {
     return (
         <>

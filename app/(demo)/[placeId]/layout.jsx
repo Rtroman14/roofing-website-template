@@ -5,6 +5,40 @@ import Script from "next/script";
 import { isValidPlaceId } from "@/lib/validators";
 import { notFound } from "next/navigation";
 
+export async function generateMetadata({ params }) {
+    const { placeId } = await params;
+
+    // Validate Place ID format
+    if (!isValidPlaceId(placeId)) {
+        return {
+            title: "ACME Roofing",
+            description:
+                "Professional roofing installation, repair, and maintenance for residential and commercial properties.",
+        };
+    }
+
+    // Fetch place data
+    const config = await fetchPlaceData(placeId);
+
+    // Use company name if available, otherwise use default
+    if (config?.companyName) {
+        const cityPart = config.city ? ` in ${config.city}` : "";
+        const statePart = config.state ? `, ${config.state}` : "";
+        const location = `${cityPart}${statePart}`;
+
+        return {
+            title: config.companyName,
+            description: `Professional roofing installation, repair, and maintenance${location}. Trusted service for residential and commercial properties.`,
+        };
+    }
+
+    return {
+        title: "ACME Roofing",
+        description:
+            "Professional roofing installation, repair, and maintenance for residential and commercial properties.",
+    };
+}
+
 export default async function DemoLayout({ children, params }) {
     const { placeId } = await params;
 
