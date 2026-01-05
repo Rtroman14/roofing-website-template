@@ -33,14 +33,24 @@ export default async function DemoPage({ params }) {
     return (
         <div className="flex flex-col">
             <div className="relative min-h-[90vh] w-full flex items-center justify-center overflow-hidden pt-32 pb-20 lg:py-0">
-                <Image
+                {/* <Image
                     src="/aerial-roof.jpg"
                     alt="Aerial view of a roof"
                     fill
                     className="object-cover"
                     priority
-                />
-                <div className="absolute inset-0 bg-black/65" />
+                /> */}
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover"
+                >
+                    <source src="/videos/aerial-roof-3.mp4" type="video/mp4" />
+                    {/* <source src="/videos/aerial-roof-6.mp4" type="video/mp4" /> */}
+                </video>
+                <div className="absolute inset-0 bg-black/50" />
                 <Section className="relative z-10 w-full max-w-7xl">
                     <Hero title={finalConfig.heroTitle} subheading={finalConfig.heroDescription} />
                 </Section>
